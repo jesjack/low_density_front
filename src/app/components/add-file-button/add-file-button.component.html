@@ -1,0 +1,6 @@
+<button class="btn btn-primary" (click)="selectFiles()">Subir archivos</button>
+<div #dropper class="phantom-file-dropper" (dragleave)="dragend($event)" (drop)="dropHandler($event)" (dragover)="$event.preventDefault()">
+  <div>
+    <h3>Suelte los archivos aquí</h3>
+  </div>
+</div>
