@@ -2,9 +2,11 @@
 <div class="container">
   <h3>Mis archivos</h3>
   <div class="text-end">
-    <app-add-file-button></app-add-file-button>
+    <app-add-file-button (files)="addFiles($event)"></app-add-file-button>
   </div>
   <div class="files">
-
+    <app-file-view *ngFor="let file of files; let i = index" [cid]="file.cid" [name]="file.filename" [size]="file.size" [ngStyle]="{
+      'background-color': i % 2 == 0 ? '#f8f9fa' : '#fff'
+    }"></app-file-view>
   </div>
 </div>

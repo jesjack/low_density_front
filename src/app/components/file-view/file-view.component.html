@@ -1,0 +1,8 @@
+<div class="file-container mt-1" [ngStyle]="ngStyle">
+  <i class="bi bi-file-binary-fill"></i>
+  <h6>{{name}}</h6>
+  <span>{{size}}</span>
+  <button class="btn btn-sm btn-info text-light" (click)="vizualize()"><i class="bi bi-eye-fill"></i></button>
+  <button type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Copiado al portapapeles." data-bs-trigger="click hover" data-bs-delay="1000" data-bs-custom-class="custom-tooltip" class="btn btn-sm btn-success text-light" (click)="shareFile()"><i class="bi bi-share-fill"></i></button>
+  <button class="btn btn-sm btn-danger text-light" (click)="delete___()"><i class="bi bi-trash-fill"></i></button>
+</div>

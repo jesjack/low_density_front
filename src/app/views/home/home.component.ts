@@ -8,6 +8,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HomeComponent implements OnInit {
 
+  files: any[] = [];
+  
   constructor(
     private userService: UserService
   ) { }
@@ -17,7 +19,20 @@ export class HomeComponent implements OnInit {
       if (!isLogged) {
         this.userService.redirectToLogin();
       }
+
+      this.userService.getFiles().subscribe((files: any) => {
+        if (files.error) {
+          return alert(files.error)
+        }
+
+        this.files.push(...files)
+      })
     });
+  }
+
+  addFiles(files: any[]) {
+    console.log(files, 'eeee');
+    this.files = [...this.files, ...files]
   }
 
 }
